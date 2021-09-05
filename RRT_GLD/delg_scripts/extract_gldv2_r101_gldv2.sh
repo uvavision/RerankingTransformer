@@ -1,0 +1,5 @@
+python extract_features_gld.py \
+  --delf_config_path r101delg_gldv2clean_config.pbtxt \
+  --dataset_file_path $(GLDv2_ROOT)/train.txt \
+  --images_dir $(GLDv2_ROOT) \
+  --output_features_dir $(GLDv2_ROOT)/delg_r101_gldv2

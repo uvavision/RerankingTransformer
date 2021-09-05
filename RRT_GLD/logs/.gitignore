@@ -1,0 +1,4 @@
+*.yaml
+/__pycache__/*
+/*.pyc
+/DS.Store
