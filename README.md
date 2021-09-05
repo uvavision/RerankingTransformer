@@ -19,7 +19,7 @@ To use the code for experiments on Google Landmarks v2, Revisited Oxford/Paris, 
 
 To use the code for experiments on Stanford Online Products, please refer to the folder [RRT_SOP](RRT_SOP).
 
-To use the code for evaluating SuperGlue on Revisited Oxford/Paris and Stanford Online Products, please refer to the submodule [SuperGlue](SuperGlue).
+To use the code for evaluating SuperGlue on Revisited Oxford/Paris and Stanford Online Products, please refer to the repo [SuperGlue](https://github.com/uvavision/SuperGluePretrainedNetwork).
 
 
 ## Citing
