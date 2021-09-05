@@ -31,7 +31,7 @@ def config():
     temp_dir = os.path.join('logs', 'temp')
     seed = 0
     resume = None
-    cache_nn_inds = 'caches/sop/nn_inds_test.pkl'
+    cache_nn_inds = 'rrt_sop_caches/rrt_superpoint_sop_nn_inds_test.pkl'
 
 
 @ex.automain
@@ -44,7 +44,7 @@ def main(cpu, cudnn_flag, temp_dir, seed, resume, cache_nn_inds):
     loaders, recall_ks = get_loaders()
 
     torch.manual_seed(seed)
-    model = get_model(num_classes=loaders.num_classes)
+    model = get_model()
     state_dict = torch.load(resume, map_location=torch.device('cpu'))
     if 'state' in state_dict:
         state_dict = state_dict['state']
@@ -61,7 +61,7 @@ def main(cpu, cudnn_flag, temp_dir, seed, resume, cache_nn_inds):
     # setup partial function to simplify call
     eval_function = partial(evaluate_rerank, model=model, 
         cache_nn_inds=cache_nn_inds,
-        recall_ks=recall_ks, query_loader=loaders.query, gallery_loader=loaders.gallery)
+        recall_ks=recall_ks, query_loader=loaders.query, gallery_loader=None)
 
     result, nn_dists, nn_inds = eval_function()
     pprint(result)

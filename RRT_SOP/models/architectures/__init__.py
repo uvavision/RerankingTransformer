@@ -1,3 +1,4 @@
 from .resnet import resnet50
+from .superpoint import superpoint
 
-__all__ = ['resnet50']
+__all__ = ['superpoint', 'resnet50']

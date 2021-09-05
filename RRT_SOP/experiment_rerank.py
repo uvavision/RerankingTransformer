@@ -36,7 +36,7 @@ def config():
     temp_dir = osp.join('logs', 'temp')
     no_bias_decay = False
     resume = None
-    cache_nn_inds = 'rrt_sop_caches/rrt_r50_sop_nn_inds_test.pkl'
+    cache_nn_inds = 'rrt_sop_caches/rrt_superpoint_sop_nn_inds_test.pkl'
     seed = 459858808
 
 
@@ -62,8 +62,8 @@ def main(epochs, cpu, cudnn_flag, temp_dir, seed, no_bias_decay, resume, cache_n
     loaders, recall_ks = get_loaders()
 
     torch.manual_seed(seed)
-    model = get_model(num_classes=loaders.num_classes)
-    if resume is not None:
+    model = get_model()
+    if resume:
         state_dict = torch.load(resume, map_location=torch.device('cpu'))
         if 'state' in state_dict:
             state_dict = state_dict['state']
@@ -93,8 +93,9 @@ def main(epochs, cpu, cudnn_flag, temp_dir, seed, no_bias_decay, resume, cache_n
     #         scheduler.load_state_dict(state_dict['scheduler'])
 
     # setup partial function to simplify call
-    eval_function = partial(evaluate_rerank, model=model, cache_nn_inds=cache_nn_inds,
-        recall_ks=recall_ks, query_loader=loaders.query, gallery_loader=loaders.gallery)
+    eval_function = partial(evaluate_rerank, model=model, 
+        cache_nn_inds=cache_nn_inds,
+        recall_ks=recall_ks, query_loader=loaders.query, gallery_loader=None)
 
     # setup best validation logger
     metrics = eval_function()[0]

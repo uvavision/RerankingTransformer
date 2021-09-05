@@ -42,11 +42,12 @@ def main(cpu, cudnn_flag, temp_dir, seed, resume, query_set):
 
     torch.manual_seed(seed)
     loaders, recall_ks = get_loaders()
-    model = get_model(num_classes=loaders.num_classes)
-    state_dict = torch.load(resume, map_location=torch.device('cpu'))
-    if 'state' in state_dict:
-        state_dict = state_dict['state']
-    model.load_state_dict(state_dict, strict=True)
+    model = get_model()
+    # model = get_model(num_classes=loaders.num_classes)
+    # state_dict = torch.load(resume, map_location=torch.device('cpu'))
+    # if 'state' in state_dict:
+    #     state_dict = state_dict['state']
+    # model.load_state_dict(state_dict, strict=True)
 
     model.to(device)
     model = nn.DataParallel(model)
@@ -56,9 +57,8 @@ def main(cpu, cudnn_flag, temp_dir, seed, resume, query_set):
     if query_set == 'test':
         query_loader=loaders.query
     else:
-        query_loader=loaders.query_train
+        query_loader=loaders.train
     eval_function = partial(evaluate_global, model=model, recall_ks=recall_ks, query_loader=query_loader, gallery_loader=loaders.gallery)
-        
 
     # setup best validation logger
     result, nn_dists, nn_inds = eval_function()

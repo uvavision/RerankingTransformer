@@ -125,53 +125,18 @@ def recall_at_ks(query_features: torch.Tensor,
 
 @torch.no_grad()
 def recall_at_ks_rerank(
-    query_features: torch.Tensor,
-    query_labels: torch.LongTensor,
+    global_desc, local_desc, positions, masks, labels,
     ks: List[int],
     matcher: nn.Module,
-    cache_nn_inds: torch.Tensor,
-    gallery_features: Optional[torch.Tensor] = None,
-    gallery_labels: Optional[torch.Tensor] = None) -> Dict[int, float]:
-    """
-    Compute the recall between samples at each k. This function uses about 8GB of memory.
+    cache_nn_inds: torch.Tensor) -> Dict[int, float]:
 
-    Parameters
-    ----------
-    query_features : torch.Tensor
-        Features for each query sample. shape: (num_queries, num_features)
-    query_labels : torch.LongTensor
-        Labels corresponding to the query features. shape: (num_queries,)
-    ks : List[int]
-        Values at which to compute the recall.
-    gallery_features : torch.Tensor
-        Features for each gallery sample. shape: (num_queries, num_features)
-    gallery_labels : torch.LongTensor
-        Labels corresponding to the gallery features. shape: (num_queries,)
-    cosine : bool
-        Use cosine distance between samples instead of euclidean distance.
-
-    Returns
-    -------
-    recalls : Dict[int, float]
-        Values of the recall at each k.
-
-    """
-    if gallery_features is None and gallery_labels is None:
-        gallery_features = query_features
-        gallery_labels = query_labels
-    elif gallery_features is None or gallery_labels is None:
-        raise ValueError('gallery_features and gallery_labels needs to be both None or both Tensors.')
-
-    to_cpu_numpy = lambda x: x.cpu().numpy()
-    q_l, g_l = map(to_cpu_numpy, [query_labels, gallery_labels])
-
+    labels_cpu = labels.cpu().numpy()
     device = next(matcher.parameters()).device
-
     num_samples, top_k = cache_nn_inds.size()
     top_k = min(top_k, 100)
-    _, fsize, h, w = query_features.size()
 
-    bsize = 3000
+
+    bsize = 256
     scores = []
     total_time = 0.0
     ######################################################################
@@ -180,12 +145,20 @@ def recall_at_ks_rerank(
     for i in tqdm(range(top_k)):
         k_scores = []
         for j in range(0, num_samples, bsize):
-            current_query = query_features[j:(j+bsize)]
-            current_index = gallery_features[cache_nn_inds[j:(j+bsize), i]]
+            query_global = global_desc[j:(j+bsize)]
+            index_global = global_desc[cache_nn_inds[j:(j+bsize), i]]
+            query_local  = local_desc[j:(j+bsize)]
+            index_local  = local_desc[cache_nn_inds[j:(j+bsize), i]]
+            query_points = positions[j:(j+bsize)]
+            index_points = positions[cache_nn_inds[j:(j+bsize), i]]
+            query_masks  = masks[j:(j+bsize)]
+            index_masks  = masks[cache_nn_inds[j:(j+bsize), i]]
+            
             start = time.time()
-            current_scores, _, _ = matcher(None, True, 
-                src_global=None, src_local=current_query.to(device), 
-                tgt_global=None, tgt_local=current_index.to(device))
+            current_scores, _, _ = matcher(None, None, True, 
+                src_global=query_global.to(device), src_local=query_local.to(device), src_mask=query_masks.to(device), src_positions=query_points.to(device),
+                tgt_global=index_global.to(device), tgt_local=index_local.to(device), tgt_mask=index_masks.to(device), tgt_positions=index_points.to(device),
+            )
             end = time.time()
             total_time += end-start
             k_scores.append(current_scores.cpu())
@@ -206,6 +179,5 @@ def recall_at_ks_rerank(
     recalls = {}
     for k in ks:
         indices = closest_indices[:, :k]
-        recalls[k] = (q_l[:, None] == g_l[indices]).any(1).mean()
+        recalls[k] = (labels_cpu[:, None] == labels_cpu[indices]).any(1).mean()
     return {k: round(v * 100, 2) for k, v in recalls.items()}, closest_dists, closest_indices
-
