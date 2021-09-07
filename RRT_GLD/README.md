@@ -261,7 +261,7 @@ You can also check the specific command included in the [table](#experiments) ab
 
 In order to train RRTs, we need the top100 nearest neighbors for each training image. 
 
-You can down the knn file using the link shown in the [table](#experiments):
+You can download the knn file using the link shown in the [table](#experiments):
 
 ```
 wget www.cs.virginia.edu/~ft3ex/data/rrt_iccv2021_data/gld_nn/nn_inds_[r50|r101]_[gldv1|gldv2].pkl \
