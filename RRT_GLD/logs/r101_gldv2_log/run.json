@@ -1,0 +1,206 @@
+{
+  "artifacts": [
+    "rrt_gldv2_roxford_r101_gldv2.pt"
+  ],
+  "command": "main",
+  "experiment": {
+    "base_dir": "/localtemp/ft3ex/research/RRT_ICCV2021",
+    "dependencies": [
+      "munch==2.5.0",
+      "numpy==1.18.5",
+      "sacred==0.8.1",
+      "torch==1.6.0"
+    ],
+    "mainfile": "experiment.py",
+    "name": "Instance Learning",
+    "repositories": [
+      {
+        "commit": "2eda83b22981125b552df6448fb5150bca6cc5cf",
+        "dirty": false,
+        "url": "git@github.com:fwtan/RRT_ICCV2021.git"
+      },
+      {
+        "commit": "2eda83b22981125b552df6448fb5150bca6cc5cf",
+        "dirty": false,
+        "url": "git@github.com:fwtan/RRT_ICCV2021.git"
+      },
+      {
+        "commit": "2eda83b22981125b552df6448fb5150bca6cc5cf",
+        "dirty": false,
+        "url": "git@github.com:fwtan/RRT_ICCV2021.git"
+      },
+      {
+        "commit": "2eda83b22981125b552df6448fb5150bca6cc5cf",
+        "dirty": false,
+        "url": "git@github.com:fwtan/RRT_ICCV2021.git"
+      },
+      {
+        "commit": "2eda83b22981125b552df6448fb5150bca6cc5cf",
+        "dirty": false,
+        "url": "git@github.com:fwtan/RRT_ICCV2021.git"
+      },
+      {
+        "commit": "2eda83b22981125b552df6448fb5150bca6cc5cf",
+        "dirty": false,
+        "url": "git@github.com:fwtan/RRT_ICCV2021.git"
+      },
+      {
+        "commit": "2eda83b22981125b552df6448fb5150bca6cc5cf",
+        "dirty": false,
+        "url": "git@github.com:fwtan/RRT_ICCV2021.git"
+      },
+      {
+        "commit": "2eda83b22981125b552df6448fb5150bca6cc5cf",
+        "dirty": false,
+        "url": "git@github.com:fwtan/RRT_ICCV2021.git"
+      },
+      {
+        "commit": "2eda83b22981125b552df6448fb5150bca6cc5cf",
+        "dirty": false,
+        "url": "git@github.com:fwtan/RRT_ICCV2021.git"
+      },
+      {
+        "commit": "2eda83b22981125b552df6448fb5150bca6cc5cf",
+        "dirty": false,
+        "url": "git@github.com:fwtan/RRT_ICCV2021.git"
+      },
+      {
+        "commit": "2eda83b22981125b552df6448fb5150bca6cc5cf",
+        "dirty": false,
+        "url": "git@github.com:fwtan/RRT_ICCV2021.git"
+      }
+    ],
+    "sources": [
+      [
+        "experiment.py",
+        "_sources/experiment_b188390aea5561c54e316e2e345260fb.py"
+      ],
+      [
+        "models/__init__.py",
+        "_sources/__init___d41d8cd98f00b204e9800998ecf8427e.py"
+      ],
+      [
+        "models/ingredient.py",
+        "_sources/ingredient_e1254d69615a38366e05e37739159fb8.py"
+      ],
+      [
+        "models/matcher.py",
+        "_sources/matcher_88ceb591ce323fe891dd9fac13665dd0.py"
+      ],
+      [
+        "utils/__init__.py",
+        "_sources/__init___6710a2ef7613f99a313dbdc140724885.py"
+      ],
+      [
+        "utils/data/__init__.py",
+        "_sources/__init___d41d8cd98f00b204e9800998ecf8427e.py"
+      ],
+      [
+        "utils/data/dataset.py",
+        "_sources/dataset_dfe6adfc050c671ad25f55c8ce968075.py"
+      ],
+      [
+        "utils/data/dataset_ingredient.py",
+        "_sources/dataset_ingredient_bfa2677fd0315fd46bc638a81861d28a.py"
+      ],
+      [
+        "utils/data/utils.py",
+        "_sources/utils_80b362e043aa313b59cf440caf1eaeab.py"
+      ],
+      [
+        "utils/training.py",
+        "_sources/training_0fcb88461aa6ef4452e22656166f0e6d.py"
+      ],
+      [
+        "utils/utils.py",
+        "_sources/utils_3516f995788836e5bbb34056e3fcda48.py"
+      ]
+    ]
+  },
+  "heartbeat": "2021-08-08T09:55:29.272457",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz",
+    "gpus": {
+      "driver_version": "440.82",
+      "gpus": [
+        {
+          "model": "GeForce GTX 1080 Ti",
+          "persistence_mode": true,
+          "total_memory": 11178
+        },
+        {
+          "model": "GeForce GTX 1080 Ti",
+          "persistence_mode": true,
+          "total_memory": 11178
+        },
+        {
+          "model": "GeForce GTX 1080 Ti",
+          "persistence_mode": true,
+          "total_memory": 11178
+        },
+        {
+          "model": "GeForce GTX 1080 Ti",
+          "persistence_mode": true,
+          "total_memory": 11178
+        }
+      ]
+    },
+    "hostname": "bigvision",
+    "os": [
+      "Linux",
+      "Linux-3.10.0-1127.19.1.el7.x86_64-x86_64-with-centos-7.8.2003-Core"
+    ],
+    "python_version": "3.6.10"
+  },
+  "meta": {
+    "command": "main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": "logs/r101_gldv2",
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "dataset.gldv2_roxford_r101_gldv2",
+        "model.RRT",
+        "temp_dir=logs/r101_gldv2"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": {
+    "H_map": 64.087,
+    "H_mp": [
+      95.714,
+      87.714,
+      80.551
+    ],
+    "M_map": 79.888,
+    "M_mp": [
+      98.571,
+      94.857,
+      93.122
+    ]
+  },
+  "start_time": "2021-08-07T08:33:07.705463",
+  "status": "COMPLETED",
+  "stop_time": "2021-08-08T09:55:29.061048"
+}

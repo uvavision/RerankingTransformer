@@ -1,0 +1,61 @@
+{
+  "cpu": false,
+  "cudnn_flag": "benchmark",
+  "dataset": {
+    "batch_size": 36,
+    "desc_name": "r101_gldv2",
+    "max_sequence_len": 500,
+    "name": "gldv2_roxford_r101_gldv2",
+    "num_candidates": 100,
+    "num_workers": 8,
+    "pin_memory": true,
+    "recalls": [
+      1,
+      5,
+      10
+    ],
+    "sampler": "triplet",
+    "test_batch_size": 36,
+    "test_data_dir": "data/oxford5k",
+    "test_gnd_file": "gnd_roxford5k.pkl",
+    "test_txt": [
+      "test_query.txt",
+      "test_gallery.txt"
+    ],
+    "train_data_dir": "data/gldv2",
+    "train_txt": "train.txt"
+  },
+  "epochs": 15,
+  "loss": "bce",
+  "lr": 0.0001,
+  "max_norm": 0.0,
+  "model": {
+    "activation": "relu",
+    "dim_K": 256,
+    "dim_feedforward": 1024,
+    "dropout": 0.0,
+    "name": "rrt",
+    "nhead": 4,
+    "normalize_before": false,
+    "num_encoder_layers": 6,
+    "num_global_features": 2048,
+    "num_local_features": 128,
+    "seq_len": 1004
+  },
+  "momentum": 0.0,
+  "nesterov": false,
+  "no_bias_decay": false,
+  "optim": "adamw",
+  "resume": null,
+  "scheduler": "multistep",
+  "scheduler_gamma": 0.1,
+  "scheduler_tau": [
+    15,
+    18
+  ],
+  "seed": 0,
+  "temp_dir": "logs/r101_gldv2",
+  "visdom_freq": 100,
+  "visdom_port": null,
+  "weight_decay": 0.0005
+}

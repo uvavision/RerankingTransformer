@@ -1,0 +1,201 @@
+{
+  "artifacts": [
+    "resnet50_sop.pt",
+    "visdom_data.pt"
+  ],
+  "command": "main",
+  "experiment": {
+    "base_dir": "/localtemp/ft3ex/research/retrieval",
+    "dependencies": [
+      "munch==2.5.0",
+      "numpy==1.18.1",
+      "sacred==0.8.1",
+      "torch==1.4.0",
+      "torchvision==0.5.0",
+      "visdom-logger==0.1"
+    ],
+    "mainfile": "experiment_local.py",
+    "name": "Instance Learning",
+    "repositories": [
+      {
+        "commit": "f16e55b4ce3fb4d23aacde889042719e374f9b7d",
+        "dirty": true,
+        "url": "git@github.com:fwtan/retrieval.git"
+      },
+      {
+        "commit": "f16e55b4ce3fb4d23aacde889042719e374f9b7d",
+        "dirty": true,
+        "url": "git@github.com:fwtan/retrieval.git"
+      },
+      {
+        "commit": "f16e55b4ce3fb4d23aacde889042719e374f9b7d",
+        "dirty": true,
+        "url": "git@github.com:fwtan/retrieval.git"
+      },
+      {
+        "commit": "f16e55b4ce3fb4d23aacde889042719e374f9b7d",
+        "dirty": true,
+        "url": "git@github.com:fwtan/retrieval.git"
+      },
+      {
+        "commit": "f16e55b4ce3fb4d23aacde889042719e374f9b7d",
+        "dirty": true,
+        "url": "git@github.com:fwtan/retrieval.git"
+      },
+      {
+        "commit": "f16e55b4ce3fb4d23aacde889042719e374f9b7d",
+        "dirty": true,
+        "url": "git@github.com:fwtan/retrieval.git"
+      },
+      {
+        "commit": "f16e55b4ce3fb4d23aacde889042719e374f9b7d",
+        "dirty": true,
+        "url": "git@github.com:fwtan/retrieval.git"
+      },
+      {
+        "commit": "f16e55b4ce3fb4d23aacde889042719e374f9b7d",
+        "dirty": true,
+        "url": "git@github.com:fwtan/retrieval.git"
+      },
+      {
+        "commit": "f16e55b4ce3fb4d23aacde889042719e374f9b7d",
+        "dirty": true,
+        "url": "git@github.com:fwtan/retrieval.git"
+      },
+      {
+        "commit": "f16e55b4ce3fb4d23aacde889042719e374f9b7d",
+        "dirty": true,
+        "url": "git@github.com:fwtan/retrieval.git"
+      }
+    ],
+    "sources": [
+      [
+        "experiment_local.py",
+        "_sources/experiment_local_735962e31094776fcd9d953d5fdfbd42.py"
+      ],
+      [
+        "models/__init__.py",
+        "_sources/__init___d41d8cd98f00b204e9800998ecf8427e.py"
+      ],
+      [
+        "models/ingredient.py",
+        "_sources/ingredient_336fa113a5c54d65249a66835cf1bf6f.py"
+      ],
+      [
+        "utils/__init__.py",
+        "_sources/__init___da32005aece981f6d9579a743fc289c4.py"
+      ],
+      [
+        "utils/data/__init__.py",
+        "_sources/__init___d41d8cd98f00b204e9800998ecf8427e.py"
+      ],
+      [
+        "utils/data/dataset_ingredient.py",
+        "_sources/dataset_ingredient_a9178363a645d3c842b69fc3c6b688d1.py"
+      ],
+      [
+        "utils/data/image_dataset.py",
+        "_sources/image_dataset_0cb20885a575efffe1b2a93252a7eaa0.py"
+      ],
+      [
+        "utils/data/utils.py",
+        "_sources/utils_a91f91620505f75093fc0b88fea3c219.py"
+      ],
+      [
+        "utils/training.py",
+        "_sources/training_baaca854d2458eda28e13439efd23750.py"
+      ],
+      [
+        "utils/utils.py",
+        "_sources/utils_e794d6f53fc05828215fb460865bfe1b.py"
+      ]
+    ]
+  },
+  "heartbeat": "2020-06-07T11:01:48.307263",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz",
+    "gpus": {
+      "driver_version": "418.87.00",
+      "gpus": [
+        {
+          "model": "GeForce GTX 1080 Ti",
+          "persistence_mode": true,
+          "total_memory": 11178
+        },
+        {
+          "model": "GeForce GTX 1080 Ti",
+          "persistence_mode": true,
+          "total_memory": 11178
+        },
+        {
+          "model": "GeForce GTX 1080 Ti",
+          "persistence_mode": true,
+          "total_memory": 11178
+        },
+        {
+          "model": "GeForce GTX 1080 Ti",
+          "persistence_mode": true,
+          "total_memory": 11178
+        }
+      ]
+    },
+    "hostname": "bigvision",
+    "os": [
+      "Linux",
+      "Linux-3.10.0-1062.12.1.el7.x86_64-x86_64-with-centos-7.7.1908-Core"
+    ],
+    "python_version": "3.6.10"
+  },
+  "meta": {
+    "command": "main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": "outputs/sop_bce_local_1024_finetune",
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "dataset.sop_rerank",
+        "model.resnet50_rerank",
+        "epochs=100",
+        "optim=adamw",
+        "lr=0.0001",
+        "momentum=0.9",
+        "nesterov=True",
+        "weight_decay=0.0004",
+        "scheduler=multistep",
+        "temp_dir=outputs/sop_bce_local_1024_finetune",
+        "visdom_port=8097",
+        "no_bias_decay=False",
+        "resume=outputs/sop_bce_local_1024/resnet50_sop.pt"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": {
+    "dtype": "float64",
+    "py/object": "numpy.float64",
+    "value": 85.65
+  },
+  "start_time": "2020-06-06T13:40:26.685770",
+  "status": "COMPLETED",
+  "stop_time": "2020-06-07T11:01:48.297492"
+}

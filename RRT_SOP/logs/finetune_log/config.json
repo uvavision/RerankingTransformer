@@ -1,0 +1,81 @@
+{
+  "cache_nn_inds": "caches/test_caches/nn_inds.pkl",
+  "cpu": false,
+  "cudnn_flag": "benchmark",
+  "dataset": {
+    "batch_size": 300,
+    "crop_for_inference": false,
+    "crop_size": 224,
+    "data_path": "data/Stanford_Online_Products",
+    "name": "sop",
+    "num_identities": 150,
+    "num_iterations": 198,
+    "num_workers": 8,
+    "pin_memory": false,
+    "preload": false,
+    "ratio": [
+      0.75,
+      1.3333333333333333
+    ],
+    "recalls": [
+      1,
+      10,
+      100,
+      1000
+    ],
+    "resize": null,
+    "sample_per_id": 2,
+    "sampler": "boost",
+    "scale": [
+      0.08,
+      1
+    ],
+    "test_batch_size": 800,
+    "test_cache_nn_dists": "caches/test_caches/nn_dists.pkl",
+    "test_cache_nn_inds": "caches/test_caches/nn_inds.pkl",
+    "test_file": "test.txt",
+    "train_cache_nn_dists": "caches/train_caches/nn_dists.pkl",
+    "train_cache_nn_inds": "caches/train_caches/nn_inds.pkl",
+    "train_file": "train.txt"
+  },
+  "epochs": 100,
+  "label_smoothing": 0.1,
+  "loss": "bce",
+  "lr": 0.0001,
+  "model": {
+    "arch": "resnet50",
+    "detach": false,
+    "dropout": 0.0,
+    "ert_activation": "relu",
+    "ert_dim_feedforward": 1024,
+    "ert_dropout": 0.0,
+    "ert_nhead": 4,
+    "ert_normalize_before": false,
+    "ert_num_encoder_layers": 6,
+    "norm_layer": null,
+    "normalize": true,
+    "normalize_weight": false,
+    "num_features": 128,
+    "num_local_features": 128,
+    "pretrained": true,
+    "remap": false,
+    "set_bn_eval": true
+  },
+  "momentum": 0.9,
+  "nesterov": true,
+  "no_bias_decay": false,
+  "optim": "adamw",
+  "resume": "outputs/sop_bce_local_1024/resnet50_sop.pt",
+  "scheduler": "multistep",
+  "scheduler_gamma": 0.1,
+  "scheduler_tau": [
+    40,
+    60
+  ],
+  "seed": 459858808,
+  "temp_dir": "outputs/sop_bce_local_1024_finetune",
+  "temperature": 0.05,
+  "visdom_freq": 20,
+  "visdom_port": 8097,
+  "weight_decay": 0.0004
+}

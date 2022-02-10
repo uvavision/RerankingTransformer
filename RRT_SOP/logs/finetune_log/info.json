@@ -1,0 +1,40 @@
+{
+  "recall": {
+    "cosine": {
+      "json://1": {
+        "py/id": 0
+      },
+      "json://10": {
+        "py/id": 1
+      },
+      "json://100": {
+        "py/id": 2
+      },
+      "json://1000": {
+        "py/id": 3
+      }
+    },
+    "l2": {
+      "json://1": {
+        "dtype": "float64",
+        "py/object": "numpy.float64",
+        "value": 85.65
+      },
+      "json://10": {
+        "dtype": "float64",
+        "py/object": "numpy.float64",
+        "value": 92.95
+      },
+      "json://100": {
+        "dtype": "float64",
+        "py/object": "numpy.float64",
+        "value": 93.28
+      },
+      "json://1000": {
+        "dtype": "float64",
+        "py/object": "numpy.float64",
+        "value": 93.28
+      }
+    }
+  }
+}
