@@ -170,7 +170,7 @@ python tools/prepare_data.py
       <td align="center">v1</td>
       <td align="center">ROxf: 75.5 / 56.4<br/>RPar: 82.7 / 68.6</td>
       <td align="center">ROxf: <a href=rrt_scripts/eval_r50_gldv1_roxf_rerank.sh>script</a><br/>RPar: <a href=rrt_scripts/eval_r50_gldv1_rpar_rerank.sh>script</a></td>
-      <td align="center"><a href=www.cs.virginia.edu/~ft3ex/data/rrt_iccv2021_data/gld_nn/nn_inds_r50_gldv1.pkl>knn_file</a> | <a href=rrt_scripts/train_r50_gldv1.sh>script</a></td>
+      <td align="center"><a href=rrt_scripts/train_r50_gldv1.sh>script</a></td>
 </tr>
 <tr>
       <td align="left">Global retrieval</td>
@@ -186,7 +186,7 @@ python tools/prepare_data.py
       <td align="center">v2-clean</td>
       <td align="center">ROxf: 78.1 / 60.2<br/>RPar: 86.7 / 75.1</td>
       <td align="center">ROxf: <a href=rrt_scripts/eval_r50_gldv2_roxf_rerank.sh>script</a><br/>RPar: <a href=rrt_scripts/eval_r50_gldv2_rpar_rerank.sh>script</a></td>
-      <td align="center"><a href=www.cs.virginia.edu/~ft3ex/data/rrt_iccv2021_data/gld_nn/nn_inds_r50_gldv2.pkl>knn_file</a> | <a href=rrt_scripts/train_r50_gldv2.sh>script</a></td>
+      <td align="center"><a href=rrt_scripts/train_r50_gldv2.sh>script</a></td>
 </tr>
 <tr>
       <td align="left">Global retrieval</td>
@@ -202,7 +202,7 @@ python tools/prepare_data.py
       <td align="center">v1</td>
       <td align="center">ROxf: 78.8 / 62.5<br/>RPar: 83.2 / 68.4</td>
       <td align="center">ROxf: <a href=rrt_scripts/eval_r101_gldv1_roxf_rerank.sh>script</a><br/>RPar: <a href=rrt_scripts/eval_r101_gldv1_rpar_rerank.sh>script</a></td>
-      <td align="center"><a href=www.cs.virginia.edu/~ft3ex/data/rrt_iccv2021_data/gld_nn/nn_inds_r101_gldv1.pkl>knn_file</a> | <a href=rrt_scripts/train_r101_gldv1.sh>script</a></td>
+      <td align="center"><a href=rrt_scripts/train_r101_gldv1.sh>script</a></td>
 </tr>
 <tr>
       <td align="left">Global retrieval</td>
@@ -218,7 +218,7 @@ python tools/prepare_data.py
       <td align="center">v2-clean</td>
       <td align="center">ROxf: 79.9 / 64.1<br/>RPar: 87.6 / 76.1</td>
       <td align="center">ROxf: <a href=rrt_scripts/eval_r101_gldv2_roxf_rerank.sh>script</a><br/>RPar: <a href=rrt_scripts/eval_r101_gldv2_rpar_rerank.sh>script</a></td>
-      <td align="center"><a href=www.cs.virginia.edu/~ft3ex/data/rrt_iccv2021_data/gld_nn/nn_inds_r101_gldv2.pkl>knn_file</a> | <a href=rrt_scripts/train_r101_gldv2.sh>script</a></td>
+      <td align="center"><a href=rrt_scripts/train_r101_gldv2.sh>script</a></td>
 </tr>
 </tbody></table>
   
