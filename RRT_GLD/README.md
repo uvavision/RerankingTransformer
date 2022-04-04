@@ -25,9 +25,9 @@ The code is built on top of the [metric learning framework](https://github.com/j
 <tr>
       <td align="center">ResNet-50</td>
       <td align="center">v1</td>
-      <td align="center"><a href=delg_scripts/extract_gldv2_r50_gldv1.sh>script</a> | <a href=www.cs.virginia.edu/~ft3ex/data/rrt_iccv2021_data/gldv2/delg_r50_gldv1.zip>desc.</a></td>
-      <td align="center"><a href=delg_scripts/extract_oxford_r50_gldv1.sh>script</a> | <a href=www.cs.virginia.edu/~ft3ex/data/rrt_iccv2021_data/oxford5k/delg_r50_gldv1.zip>desc.</a></td>
-      <td align="center"><a href=delg_scripts/extract_paris_r50_gldv1.sh>script</a>  | <a href=www.cs.virginia.edu/~ft3ex/data/rrt_iccv2021_data/paris6k/delg_r50_gldv1.zip>desc.</a></td>
+      <td align="center"><a href=delg_scripts/extract_gldv2_r50_gldv1.sh>script</a></td>
+      <td align="center"><a href=delg_scripts/extract_oxford_r50_gldv1.sh>script</a></td>
+      <td align="center"><a href=delg_scripts/extract_paris_r50_gldv1.sh>script</a></td>
 </tr>
 <tr>
       <td align="center">ResNet-50</td>
@@ -80,10 +80,10 @@ Copy-paste the file of the training split [`train.txt`](https://github.com/fwtan
 Run the scripts shown in the [table](#extraction-scripts-wrap-up) above. Again, the scripts may not work out-of-the-box, you may still need to set the paths of the input/output directories properly.
 
 
-*The users are suggested to extract the features themselves by following the instructions above. 
+<!-- *The users are suggested to extract the features themselves by following the instructions above. 
 We provide the links of the extracted descriptors of `delg_r50_gldv1` in the [table](#extraction-scripts-wrap-up) (the 1st row) above as an example. 
 Given the sizes of the descriptors and the network condition of our server, downloading/unziping the descriptors may be much slower than extracting the descriptors directly.*
-
+ -->
 
 ### Dataset structure
 
@@ -261,14 +261,7 @@ You can also check the specific command included in the [table](#experiments) ab
 
 In order to train RRTs, we need the top100 nearest neighbors for each training image. 
 
-You can download the knn file using the link shown in the [table](#experiments):
-
-```
-wget www.cs.virginia.edu/~ft3ex/data/rrt_iccv2021_data/gld_nn/nn_inds_[r50|r101]_[gldv1|gldv2].pkl \
-      -P data/gldv2
-```
-
-Or generate them from scratch (it may take hours):
+You can generate them by running (it may take hours):
 
 ```
 python tools/prepare_topk_gldv2.py with feature_name=[r50|r101]_[gldv1|gldv2]
