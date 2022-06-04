@@ -51,7 +51,8 @@ Please unzip them to the root directory (```RRT_SOP```).
 <th valign="bottom">R@10</th>
 <th valign="bottom">R@100</th>
 <th valign="bottom">Evaluation</th>
-<th valign="bottom">Training</th>  
+<th valign="bottom">Training</th> 
+<th valign="bottom">Log</th> 
 <!-- TABLE BODY -->
 <tr>
       <td align="left">Global retrieval</td>
@@ -62,6 +63,7 @@ Please unzip them to the root directory (```RRT_SOP```).
       <td align="center">96.6</td>
       <td align="center"><a href=#global-retrieval>script</a></td>
       <td align="center"><a href=#global-retrieval-1>script</a></td>
+      <td align="center"></td>
 </tr>
 <tr>
       <td align="left">Reranking (frozen backbone)</td>
@@ -72,6 +74,7 @@ Please unzip them to the root directory (```RRT_SOP```).
       <td align="center">96.6</td>
       <td align="center"><a href=#reranking-with-a-frozen-backbone>script</a></td>
       <td align="center"><a href=#reranking-with-a-frozen-backbone-1>script</a></td>
+      <td align="center"></td>
 </tr>
 <tr>
       <td align="left">Reranking (finetuned backbone)</td>
@@ -82,6 +85,7 @@ Please unzip them to the root directory (```RRT_SOP```).
       <td align="center">96.6</td>
       <td align="center"><a href=#reranking-with-a-finetuned-backbone>script</a></td>
       <td align="center"><a href=#reranking-with-a-finetuned-backbone-1>script</a></td>
+      <td align="center"><a href=logs/finetune_log>log</a></td>
 </tr>
 </tbody></table>
 
