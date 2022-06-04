@@ -74,8 +74,7 @@ cd $(DELG_ROOT)/delf/python/delg
 
 Download the training set of Google Landmarks v2 from [CVDF](https://github.com/cvdfoundation/google-landmark), or [Kaggle](https://www.kaggle.com/c/landmark-recognition-2021/data). We call the directory of the downloaded dataset as `GLDv2_ROOT`.
 
-Copy-paste the file of the training split [`train.txt`](https://github.com/fwtan/RRT_ICCV2021/blob/main/RRT_GLD/data/gldv2/train.txt) and the python script [`extract_features_gld.py
-`](https://github.com/fwtan/RRT_ICCV2021/blob/main/RRT_GLD/delg_scripts/extract_features_gld.py) to `DELG_ROOT`.
+Copy-paste the file of the training split [`train.txt`](https://github.com/fwtan/RRT_ICCV2021/blob/main/RRT_GLD/data/gldv2/train.txt) to `GLDv2_ROOT`, and the python script [`extract_features_gld.py`](https://github.com/fwtan/RRT_ICCV2021/blob/main/RRT_GLD/delg_scripts/extract_features_gld.py) to `DELG_ROOT/delf/python/delg`.
 
 Run the scripts shown in the [table](#extraction-scripts-wrap-up) above. Again, the scripts may not work out-of-the-box, you may still need to set the paths of the input/output directories properly.
 
@@ -155,6 +154,7 @@ python tools/prepare_data.py
 <th valign="bottom">mAP<br/>medium / hard</th>
 <th valign="bottom">Evaluation</th>
 <th valign="bottom">Training</th>  
+<th valign="bottom">Log</th>     
 <!-- TABLE BODY -->
 <tr>
       <td align="left">Global retrieval</td>
@@ -163,6 +163,7 @@ python tools/prepare_data.py
       <td align="center">ROxf: 69.7 / 45.1<br/>RPar: 81.6 / 63.4</td>
       <td align="center">ROxf: <a href=rrt_scripts/eval_r50_gldv1_roxf_global.sh>script</a><br/>RPar: <a href=rrt_scripts/eval_r50_gldv1_rpar_global.sh>script</a></td>
       <td align="center">N.A.</td>
+      <td align="center"></td>
 </tr>
 <tr>
       <td align="left">Reranking</td>
@@ -171,6 +172,7 @@ python tools/prepare_data.py
       <td align="center">ROxf: 75.5 / 56.4<br/>RPar: 82.7 / 68.6</td>
       <td align="center">ROxf: <a href=rrt_scripts/eval_r50_gldv1_roxf_rerank.sh>script</a><br/>RPar: <a href=rrt_scripts/eval_r50_gldv1_rpar_rerank.sh>script</a></td>
       <td align="center"><a href=rrt_scripts/train_r50_gldv1.sh>script</a></td>
+      <td align="center"><a href=logs/r50_gldv1_log_retrained>log (retrained)</a></td>
 </tr>
 <tr>
       <td align="left">Global retrieval</td>
@@ -179,6 +181,7 @@ python tools/prepare_data.py
       <td align="center">ROxf: 73.6 / 51.0<br/>RPar: 85.7 / 71.5</td>
       <td align="center">ROxf: <a href=rrt_scripts/eval_r50_gldv2_roxf_global.sh>script</a><br/>RPar: <a href=rrt_scripts/eval_r50_gldv2_rpar_global.sh>script</a></td>
       <td align="center">N.A.</td>
+      <td align="center"></td>
 </tr>
 <tr>
       <td align="left">Reranking</td>
@@ -187,6 +190,7 @@ python tools/prepare_data.py
       <td align="center">ROxf: 78.1 / 60.2<br/>RPar: 86.7 / 75.1</td>
       <td align="center">ROxf: <a href=rrt_scripts/eval_r50_gldv2_roxf_rerank.sh>script</a><br/>RPar: <a href=rrt_scripts/eval_r50_gldv2_rpar_rerank.sh>script</a></td>
       <td align="center"><a href=rrt_scripts/train_r50_gldv2.sh>script</a></td>
+      <td align="center"></td>
 </tr>
 <tr>
       <td align="left">Global retrieval</td>
@@ -195,6 +199,7 @@ python tools/prepare_data.py
       <td align="center">ROxf: 73.2 / 51.2<br/>RPar: 82.4 / 64.7</td>
       <td align="center">ROxf: <a href=rrt_scripts/eval_r101_gldv1_roxf_global.sh>script</a><br/>RPar: <a href=rrt_scripts/eval_r101_gldv1_rpar_global.sh>script</a></td>
       <td align="center">N.A.</td>
+      <td align="center"></td>
 </tr>
 <tr>
       <td align="left">Reranking</td>
@@ -203,6 +208,7 @@ python tools/prepare_data.py
       <td align="center">ROxf: 78.8 / 62.5<br/>RPar: 83.2 / 68.4</td>
       <td align="center">ROxf: <a href=rrt_scripts/eval_r101_gldv1_roxf_rerank.sh>script</a><br/>RPar: <a href=rrt_scripts/eval_r101_gldv1_rpar_rerank.sh>script</a></td>
       <td align="center"><a href=rrt_scripts/train_r101_gldv1.sh>script</a></td>
+      <td align="center"></td>
 </tr>
 <tr>
       <td align="left">Global retrieval</td>
@@ -211,6 +217,7 @@ python tools/prepare_data.py
       <td align="center">ROxf: 76.3 / 55.6<br/>RPar: 86.6 / 72.4</td>
       <td align="center">ROxf: <a href=rrt_scripts/eval_r101_gldv2_roxf_global.sh>script</a><br/>RPar: <a href=rrt_scripts/eval_r101_gldv2_rpar_global.sh>script</a></td>
       <td align="center">N.A.</td>
+      <td align="center"></td>
 </tr>
 <tr>
       <td align="left">Reranking</td>
@@ -219,6 +226,7 @@ python tools/prepare_data.py
       <td align="center">ROxf: 79.9 / 64.1<br/>RPar: 87.6 / 76.1</td>
       <td align="center">ROxf: <a href=rrt_scripts/eval_r101_gldv2_roxf_rerank.sh>script</a><br/>RPar: <a href=rrt_scripts/eval_r101_gldv2_rpar_rerank.sh>script</a></td>
       <td align="center"><a href=rrt_scripts/train_r101_gldv2.sh>script</a></td>
+      <td align="center"><a href=logs/r101_gldv2_log>log</a></td>
 </tr>
 </tbody></table>
   
