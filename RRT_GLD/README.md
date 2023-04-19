@@ -1,5 +1,8 @@
 # RerankingTransformers (RRTs): Experiments on Google Landmarks v2, Revisited Oxford/Paris
 
+## Updates
+* [04/19/2023] Thank [Pavel Šuma](sumapave@fel.cvut.cz) for bringing to our attention a bug in [dataset.py](https://github.com/uvavision/RerankingTransformer/blob/c198e7e351d49a13260392b56df6b171653bb393/RRT_GLD/utils/data/dataset.py#L57)https://github.com/uvavision/RerankingTransformer/blob/c198e7e351d49a13260392b56df6b171653bb393/RRT_GLD/utils/data/dataset.py#L57, which caused the number of scales to be reduced from 7 to 4. However, [Pavel Šuma](sumapave@fel.cvut.cz)'s experiments showed that fixing the bug resulted in worse performance. Therefore, we have decided not to make any changes to the code. Once again, we appreciate Pavel Šuma for his valuable contribution.
+
 ## About
 This folder contains the code for training/evaluating RRTs using the pretrained [DELG descriptors](https://arxiv.org/abs/2001.05027).
 
