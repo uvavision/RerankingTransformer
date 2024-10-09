@@ -28,12 +28,12 @@ You can download the pretrained models and the KNN files from these links:
 
 Pretrained models
 ```
-https://www.dropbox.com/s/2gl17jrs3iozds4/rrt_sop_ckpts.zip?dl=0
+https://huggingface.co/fwtan/rrt_sop_data/tree/main/rrt_sop_ckpts
 ```
 
 KNN files (optional):
 ```
-https://www.dropbox.com/s/ohrk1ew25ebdlfj/rrt_sop_caches.zip?dl=0
+https://huggingface.co/fwtan/rrt_sop_data/tree/main/rrt_sop_caches
 ```
 
 Please unzip them to the root directory (```RRT_SOP```).
